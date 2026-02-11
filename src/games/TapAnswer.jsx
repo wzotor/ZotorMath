@@ -99,9 +99,9 @@ export default function TapAnswer({
         <div className="absolute left-1/3 bottom-[-140px] h-[520px] w-[520px] rounded-full bg-white/20 blur-2xl" />
       </div>
 
-      <div className="relative mx-auto max-w-4xl px-5 py-8">
+      <div className="relative mx-auto max-w-4xl px-4 py-4">
         {/* Top bar */}
-        <div className="flex flex-wrap items-center justify-between gap-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
           <button
             onClick={onBack}
             className="rounded-2xl bg-white/80 px-4 py-2 text-sm font-extrabold text-slate-900 shadow-sm backdrop-blur hover:bg-white"
@@ -109,27 +109,27 @@ export default function TapAnswer({
             ← Back
           </button>
 
-          <div className="flex flex-wrap items-center gap-3">
-            <div className="rounded-2xl bg-white/70 px-4 py-2 text-sm font-extrabold text-slate-900 shadow-sm backdrop-blur">
-              💰 Coins: {coins}
+          <div className="flex flex-wrap items-center gap-2">
+            <div className="rounded-2xl bg-white/70 px-3 py-2 text-sm font-extrabold text-slate-900 shadow-sm backdrop-blur">
+              💰 {coins}
             </div>
-            <div className="rounded-2xl bg-white/70 px-4 py-2 text-sm font-extrabold text-slate-900 shadow-sm backdrop-blur">
-              ⭐ Level: {level}
+            <div className="rounded-2xl bg-white/70 px-3 py-2 text-sm font-extrabold text-slate-900 shadow-sm backdrop-blur">
+              ⭐ {level}
             </div>
-            <div className="rounded-2xl bg-white/70 px-4 py-2 text-sm font-extrabold text-slate-900 shadow-sm backdrop-blur">
-              🔥 Streak: {streak}
+            <div className="rounded-2xl bg-white/70 px-3 py-2 text-sm font-extrabold text-slate-900 shadow-sm backdrop-blur">
+              🔥 {streak}
             </div>
           </div>
         </div>
 
         {/* Game card */}
-        <div className="mt-8 overflow-hidden rounded-[28px] bg-white/70 shadow-lg backdrop-blur">
+        <div className="mt-4 overflow-hidden rounded-[28px] bg-white/70 shadow-lg backdrop-blur">
           {/* Card header strip */}
-          <div className="bg-gradient-to-r from-slate-900/90 to-slate-900/70 px-6 py-4 text-white">
+          <div className="bg-gradient-to-r from-slate-900/90 to-slate-900/70 px-5 py-3 text-white">
             <div className="text-xs font-extrabold uppercase tracking-wider text-white/80">
               Addition Town
             </div>
-            <div className="mt-1 text-xl font-extrabold">
+            <div className="mt-1 text-lg font-extrabold">
               Tap the correct answer
             </div>
 
@@ -149,14 +149,14 @@ export default function TapAnswer({
           </div>
 
           {/* Main content */}
-          <div className="p-6 sm:p-8">
-            <div className="flex flex-wrap items-center justify-between gap-4">
+          <div className="p-4 sm:p-5">
+            <div className="flex flex-wrap items-center justify-between gap-3">
               <div>
-                <h2 className="text-3xl font-extrabold text-slate-900">
+                <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900">
                   {question.a} + {question.b} = ?
                 </h2>
-                <p className="mt-2 text-sm font-semibold text-slate-700">
-                  Pick the answer to earn coins. Build streaks to level up.
+                <p className="mt-1 text-sm font-semibold text-slate-700">
+                  Pick the answer to earn coins.
                 </p>
               </div>
 
@@ -169,21 +169,21 @@ export default function TapAnswer({
                     : { scale: 1, x: 0, rotate: 0 }
                 }
                 transition={{ duration: 0.55 }}
-                className="rounded-[26px] bg-gradient-to-br from-white to-white/70 px-6 py-5 text-4xl font-extrabold text-slate-900 shadow-sm"
+                className="rounded-[22px] bg-gradient-to-br from-white to-white/70 px-5 py-4 text-4xl font-extrabold text-slate-900 shadow-sm"
               >
                 {feedback === "correct" ? "🎉" : feedback === "wrong" ? "😅" : "🎯"}
               </motion.div>
             </div>
 
             {/* Answers */}
-            <div className="mt-7 grid gap-4 sm:grid-cols-2">
+            <div className="mt-4 grid gap-3 sm:grid-cols-2">
               {question.choices.map((c) => (
                 <motion.button
                   key={c}
                   whileHover={{ y: -3 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => handlePick(c)}
-                  className="group rounded-[26px] bg-white px-6 py-5 text-left shadow-sm ring-1 ring-slate-900/5 hover:shadow-md"
+                  className="group rounded-[22px] bg-white px-5 py-4 text-left shadow-sm ring-1 ring-slate-900/5 hover:shadow-md"
                 >
                   <div className="flex items-center justify-between">
                     <div className="text-2xl font-extrabold text-slate-900">
@@ -193,14 +193,11 @@ export default function TapAnswer({
                       Tap
                     </div>
                   </div>
-                  <div className="mt-2 text-xs font-semibold text-slate-600">
-                    Choose carefully and keep your streak 🔥
-                  </div>
                 </motion.button>
               ))}
             </div>
 
-            <div className="mt-8 text-center text-xs font-semibold text-slate-700">
+            <div className="mt-4 text-center text-xs font-semibold text-slate-700">
               ZotorMath © 2026 • Created by{" "}
               <span className="font-extrabold">Wisdom Zotor (Capochino)</span>
             </div>
