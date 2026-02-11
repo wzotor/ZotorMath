@@ -171,7 +171,7 @@ export default function TapAnswer({
                 transition={{ duration: 0.55 }}
                 className="rounded-[22px] bg-gradient-to-br from-white to-white/70 px-5 py-4 text-4xl font-extrabold text-slate-900 shadow-sm"
               >
-                {feedback === "correct" ? "🎉" : feedback === "wrong" ? "😅" : "🎯"}
+                {feedback === "correct" ? "🎉" : feedback === "wrong" ? "😞" : "🎯"}
               </motion.div>
             </div>
 
